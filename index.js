@@ -3,13 +3,21 @@
 
 let nofSolutions = 0;
 function placeQueens(arr, r) {
-  if (r == arr.length) {
+  const n = arr.length;
+  if (r == n) {
     console.log(arr);
     nofSolutions++;
   } else {
-    for (let j = 0; j < arr.length; j++) {
+    // iterate columns 0 to n-1
+    for (let j = 0; j < n; j++) {
       let legal = true;
+      // iterate rows 0 to r-1
       for (let i = 0; i < r; i++) {
+        /* 
+         * check if queen in row i is in column j,
+         * or if (r - i) == arr(i) - j
+         * or in (r - i) == j - arr(i)
+         */
         if ((arr[i] == j) || (arr[i] == j + r - i) || (arr[i] == j - r + i)) {
           legal = false;
         }
