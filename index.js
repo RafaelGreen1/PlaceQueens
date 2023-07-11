@@ -16,7 +16,7 @@ function placeQueens(arr, r) {
         /* 
          * check if queen in row i is in column j,
          * or if (r - i) == arr(i) - j
-         * or in (r - i) == j - arr(i)
+         * or if (r - i) == j - arr(i)
          */
         if ((arr[i] == j) || (arr[i] == j + r - i) || (arr[i] == j - r + i)) {
           legal = false;
